@@ -2,6 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import styled from 'styled-components'
+
+
+const Test = styled.div`
+  background: blue;
+`
 
 export default class IndexPage extends React.Component {
   render() {
@@ -10,6 +16,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
+        <Test>test</Test>
         <section className="section">
           <div className="container">
             <div className="content">
@@ -70,7 +77,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             templateKey
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY年MM月DD日")
           }
         }
       }
