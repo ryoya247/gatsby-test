@@ -9,7 +9,9 @@ description: >-
   roasting and brewing seriously and we’re glad to pass that knowledge to
   anyone.
 intro:
-  blurbs: []
+  blurbs:
+    - image: /img/products-grid2.jpg
+      text: testimage text
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their
