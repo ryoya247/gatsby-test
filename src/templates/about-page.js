@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
@@ -9,7 +8,6 @@ export const AboutPageTemplate = ({
   title,
   content,
   contentComponent,
-  topimage,
 }) => {
   const PageContent = contentComponent || Content
 
@@ -22,9 +20,6 @@ export const AboutPageTemplate = ({
               <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                 {title}
               </h2>
-              <div style={{ maxWidth: '200px'}}>
-                <Img fluid={topimage.childImageSharp.fluid} />
-              </div>
               <PageContent className="content" content={content} />
             </div>
           </div>
@@ -37,7 +32,6 @@ export const AboutPageTemplate = ({
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
-  topimage: PropTypes.object,
   contentComponent: PropTypes.func,
 }
 
@@ -49,7 +43,6 @@ const AboutPage = ({ data }) => {
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
-        topimage={post.frontmatter.topimage}
         content={post.html}
       />
     </Layout>
@@ -68,13 +61,7 @@ export const aboutPageQuery = graphql`
       html
       frontmatter {
         title
-        topimage {
-          childImageSharp {
-            fluid(maxWidth: 1000, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+
       }
     }
   }
