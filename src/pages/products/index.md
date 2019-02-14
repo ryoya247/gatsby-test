@@ -46,6 +46,11 @@ pricing:
     We make it easy to make great coffee a part of your life. Choose one of our
     monthly subscription plans to receive great coffee at your doorstep each
     month. Contact us about more details and payment info.
-  plans: []
+  plans:
+    - description: plan
+      items:
+        - items items
+      plan: plan
+      price: '45'
 ---
 
